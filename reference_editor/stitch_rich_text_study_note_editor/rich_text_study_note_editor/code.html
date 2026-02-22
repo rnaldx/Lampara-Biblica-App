@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rich Text Study Note Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#15202b] border-b border-slate-200 dark:border-slate-800 shrink-0 z-10">
+<button class="flex items-center justify-center size-10 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-base font-bold tracking-tight text-center flex-1 truncate px-2">
+            Edit Note
+        </h1>
+<button class="flex items-center justify-center h-10 px-3 -mr-2 text-primary font-semibold text-base hover:text-blue-500 transition-colors">
+            Done
+        </button>
+</header>
+<!-- Context Breadcrumb Area -->
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark shrink-0">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-[#1c2a38] border border-slate-200 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">link</span>
+                John 1:1
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-xs font-medium text-primary">
+<span class="material-symbols-outlined text-[16px] fill-1">auto_awesome</span>
+                AI Insight Available
+            </span>
+</div>
+</div>
+<!-- Main Editor Area -->
+<main class="flex-1 overflow-y-auto px-5 py-2">
+<!-- Text Content mimicking a rich text editor -->
+<div class="w-full h-full text-lg leading-relaxed text-slate-800 dark:text-slate-200 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-600 whitespace-pre-wrap" contenteditable="true">In the beginning was the Word, and the Word was with God, and the Word was God.
+
+This passage really speaks to the concept of pre-existence. It reminds me of the theme of <span class="text-primary font-medium">#Creation</span> found in Genesis. The <span class="text-primary font-medium">#Grace</span> shown here is foundational.
+
+I need to dig deeper into the Greek translation of "Logos". It seems to imply more than just a spoken word, but a divine reason or plan.
+
+<span class="text-primary font-medium">#Study</span> <span class="text-primary font-medium">#Theology</span></div>
+</main>
+<!-- Formatting Toolbar (Sticky Bottom) -->
+<!-- This toolbar sits above the keyboard on mobile -->
+<div class="bg-white dark:bg-[#15202b] border-t border-slate-200 dark:border-slate-800 px-2 py-2 shrink-0 pb-safe">
+<!-- Suggestions/AI Pill Row (Optional context layer) -->
+<div class="flex gap-2 overflow-x-auto pb-3 px-2 no-scrollbar">
+<button class="shrink-0 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-slate-500 dark:text-slate-400 font-medium">Suggest tags</button>
+<button class="shrink-0 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-primary font-medium">#Logos</button>
+<button class="shrink-0 scholarship-0 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-primary font-medium">#Light</button>
+</div>
+<div class="flex items-center justify-between gap-1">
+<!-- Text Formatting Group -->
+<div class="flex items-center gap-1 flex-1">
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined">format_bold</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined">format_italic</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined">format_list_bulleted</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined">format_list_numbered</span>
+</button>
+</div>
+<!-- Special Actions Group -->
+<div class="flex items-center gap-2 pl-2 border-l border-slate-200 dark:border-slate-700">
+<button class="h-10 px-4 flex items-center justify-center rounded-lg bg-primary text-white hover:bg-blue-600 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px] mr-1">tag</span>
+<span class="text-sm font-bold">Tag</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</button>
+</div>
+</div>
+</div>
+<style>
+        /* Utility for hiding scrollbar in suggestions */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom Safe Area for iPhone Home Indicator */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</body></html>
