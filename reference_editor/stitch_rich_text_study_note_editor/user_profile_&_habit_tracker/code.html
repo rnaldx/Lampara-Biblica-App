@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile &amp; Habit Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#1173d4',
+            surface: {
+              light: '#f5f7f9',
+              dark: '#101922',
+              card: '#1c2732',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-light dark:bg-surface-dark text-slate-900 dark:text-slate-100 font-sans antialiased overflow-hidden">
+<!-- Mobile Display Wrapper -->
+<div class="relative mx-auto h-screen max-w-md w-full bg-surface-light dark:bg-surface-dark flex flex-col shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="px-6 pt-10 pb-6 shrink-0 z-10">
+<div class="flex items-center justify-between mb-8">
+<h1 class="text-3xl font-extrabold tracking-tight">My Journey</h1>
+<button class="relative group">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-all overflow-hidden border border-primary/20">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=crop&amp;q=80&amp;w=200"/>
+</div>
+</button>
+</div>
+<!-- Progress Summary Card -->
+<div class="p-5 rounded-2xl bg-primary text-white shadow-xl shadow-primary/30 flex items-center gap-6">
+<div class="relative size-16 shrink-0 flex items-center justify-center">
+<svg class="absolute inset-0 size-full -rotate-90">
+<circle class="text-white/20" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-white" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="176" stroke-dashoffset="44" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<span class="text-sm font-bold">75%</span>
+</div>
+<div class="flex-1">
+<h3 class="text-lg font-bold">Great Streak!</h3>
+<p class="text-sm text-white/80">You have completed your goals for 4 days in a row.</p>
+</div>
+</div>
+</header>
+<!-- Main Content Area Scrollable -->
+<main class="flex-1 overflow-y-auto px-6 pb-24">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-4 mt-2">
+<h2 class="text-lg font-bold text-slate-500 uppercase tracking-widest text-[11px]">Daily Disciplines</h2>
+<button class="text-primary text-sm font-bold p-1">Edit</button>
+</div>
+<!-- Habit Cards -->
+<div class="space-y-3">
+<!-- Habit 1: COMPLETED -->
+<div class="group flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-surface-card border border-slate-200 dark:border-slate-800 shadow-sm transition-all active:scale-[0.98]">
+<div class="size-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-slate-900 dark:text-white truncate">Daily Bread</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Reading John 3-5</p>
+</div>
+<div class="size-6 rounded-full bg-green-500 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+</div>
+<!-- Habit 2: PENDING -->
+<div class="group flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-surface-card border border-slate-200 dark:border-slate-800 shadow-sm transition-all active:scale-[0.98]">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">journal</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-slate-900 dark:text-white truncate">Note taking</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Capture 3 key insights</p>
+</div>
+<div class="size-6 rounded-full border-2 border-slate-200 dark:border-slate-700"></div>
+</div>
+<!-- Habit 3: PENDING -->
+<div class="group flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-surface-card border border-slate-200 dark:border-slate-800 shadow-sm transition-all active:scale-[0.98]">
+<div class="size-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-slate-900 dark:text-white truncate">Prayer for brothers</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Interceding for the group</p>
+</div>
+<div class="size-6 rounded-full border-2 border-slate-200 dark:border-slate-700"></div>
+</div>
+</div>
+<!-- Statistics Section -->
+<div class="mt-8 mb-4">
+<h2 class="text-lg font-bold text-slate-500 uppercase tracking-widest text-[11px] mb-4">Growth Metrics</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-2xl bg-white dark:bg-surface-card border border-slate-200 dark:border-slate-800">
+<span class="text-2xl font-black text-primary">124</span>
+<p class="text-[10px] text-slate-500 font-bold uppercase mt-1">Verses Memorized</p>
+</div>
+<div class="p-4 rounded-2xl bg-white dark:bg-surface-card border border-slate-200 dark:border-slate-800">
+<span class="text-2xl font-black text-primary">42</span>
+<p class="text-[10px] text-slate-500 font-bold uppercase mt-1">Notes Shared</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Tab Bar -->
+<nav class="absolute bottom-0 left-0 w-full h-20 bg-white/80 dark:bg-[#1a232e]/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 flex items-center justify-around px-6 z-20">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="text-[10px] font-bold">Bible</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined font-fill-1">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+</nav>
+</div>
+</body></html>
